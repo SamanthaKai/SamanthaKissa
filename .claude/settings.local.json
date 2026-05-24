@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(npm install *)",
+      "Bash(cd \"e:\\\\Samantha\\\\Website\\\\Portfolio\" && mkdir -p src/components public)",
+      "Bash(npx vite *)"
+    ],
+    "additionalDirectories": [
+      "e:\\Samantha\\Website\\Portfolio\\src"
+    ]
+  }
+}
