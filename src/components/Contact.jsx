@@ -7,7 +7,7 @@ const socials = [
     icon: Mail,
     label: 'Email',
     value: 'kissasamantha123@gmail.com',
-    href: 'mailto:kissasamantha123@gmail.com',
+    href: 'https://mail.google.com/mail/?view=cm&fs=1&to=kissasamantha123@gmail.com',
     color: 'olive',
   },
   {

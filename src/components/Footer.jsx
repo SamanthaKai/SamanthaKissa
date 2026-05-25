@@ -17,7 +17,7 @@ export default function Footer() {
           </div>
           <div className="flex items-center gap-4 flex-shrink-0">
             <a
-              href="mailto:kissasamantha123@gmail.com"
+              href="https://mail.google.com/mail/?view=cm&fs=1&to=kissasamantha123@gmail.com"
               className="text-charcoal/40 dark:text-cream/40 hover:text-olive-500 dark:hover:text-olive-300 transition-colors"
               aria-label="Email"
             >
