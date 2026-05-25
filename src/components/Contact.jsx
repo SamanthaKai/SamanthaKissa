@@ -35,17 +35,30 @@ const colorStyles = {
 export default function Contact() {
   const [ref, visible] = useIntersectionObserver()
   const [form, setForm] = useState({ name: '', email: '', subject: '', message: '' })
-  const [status, setStatus] = useState(null) // null | 'sending' | 'sent'
+  const [status, setStatus] = useState(null) // null | 'sending' | 'sent' | 'error'
 
   function handleChange(e) {
+    if (status === 'error') setStatus(null)
     setForm((prev) => ({ ...prev, [e.target.name]: e.target.value }))
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault()
     setStatus('sending')
-    // Simulate form submission
-    setTimeout(() => setStatus('sent'), 1200)
+    try {
+      const res = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+        body: JSON.stringify({
+          access_key: '5b411f62-51c1-4cce-af12-e6d5eb95feed', 
+          ...form,
+        }),
+      })
+      const data = await res.json()
+      setStatus(data.success ? 'sent' : 'error')
+    } catch {
+      setStatus('error')
+    }
   }
 
   return (
@@ -201,6 +214,11 @@ export default function Contact() {
                   />
                 </div>
 
+                {status === 'error' && (
+                  <p className="text-xs text-red-500 dark:text-red-400 text-center -mb-1">
+                    Something went wrong. Please try again or email me directly.
+                  </p>
+                )}
                 <button
                   type="submit"
                   disabled={status === 'sending'}
