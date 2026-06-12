@@ -3,6 +3,39 @@ import { Shield, MapPin, Calendar, ChevronRight } from 'lucide-react'
 
 const experiences = [
   {
+    role: 'Cybersecurity Intern — SOC Analysis',
+    org: 'Ubuntu Bridge Initiative (UBI)',
+    period: 'Jun 2026 — Present',
+    location: 'Remote',
+    type: 'Internship',
+    color: 'sage',
+    description:
+      'Competitive 10-stage cybersecurity internship programme. Selected for Cohort 1 (SOC Analysis track) from an overwhelming applicant pool. Performance-based progression with weekly deadlines.',
+    achievements: [
+      'Accepted into Cohort 1 — SOC Analysis track of the UBI Cybersecurity Internship Programme',
+      'Completed Stage 0 — Foundations with a score of 94/100 (passing mark: 70)',
+      'Demonstrated skills in reading auth logs, spotting dismissal patterns, and briefing non-technical leaders',
+      'Advanced to Stage 1 — Applied Cryptography on the basis of capstone assessment results',
+      'Earned access to the UBI Alumni Network (The Root Access Network) and exclusive cybersecurity workshops',
+    ],
+  },
+  {
+    role: 'Cybersecurity Intern',
+    org: 'Karmix Tech',
+    period: 'May — Aug 2026',
+    location: 'Remote',
+    type: 'Internship',
+    color: 'terracotta',
+    description:
+      '3-month remote cybersecurity internship focused on real-world security tasks and industry-level projects to strengthen technical and professional skills.',
+    achievements: [
+      'Selected for cybersecurity internship programme (Intern ID: 5KT261203)',
+      'Gaining hands-on exposure through real-world security tasks and industry-level projects',
+      'Developing technical skills, problem-solving abilities, and professional workflows in a dynamic environment',
+      'Eligible for Internship Completion Certificate and performance-based Letter of Recommendation',
+    ],
+  },
+  {
     role: 'Cybersecurity Fellow',
     org: 'Tech4Dev Women Techsters',
     period: '2024 — Present',
@@ -40,6 +73,16 @@ const experiences = [
 ]
 
 const colorStyles = {
+  sage: {
+    dot: 'bg-sage-500',
+    badge: 'bg-sage-500/10 text-sage-600 dark:text-sage-400 border-sage-500/20',
+    icon: 'text-sage-500',
+  },
+  terracotta: {
+    dot: 'bg-terracotta',
+    badge: 'bg-terracotta/10 text-terracotta border-terracotta/20',
+    icon: 'text-terracotta',
+  },
   olive: {
     dot: 'bg-olive-500',
     badge: 'bg-olive-500/10 text-olive-600 dark:text-olive-300 border-olive-500/20',
