@@ -10,13 +10,13 @@ const experiences = [
     type: 'Internship',
     color: 'sage',
     description:
-      'Competitive 10-stage cybersecurity internship programme. Selected for Cohort 1 (SOC Analysis track) from an overwhelming applicant pool. Performance-based progression with weekly deadlines.',
+      'Competitive 5-chapter cybersecurity internship programme (Operation Root Access). Selected for Cohort 1 (SOC Analysis track) from an overwhelming applicant pool. Performance-based progression — each stage unlocks only on passing the capstone.',
     achievements: [
-      'Accepted into Cohort 1 — SOC Analysis track of the UBI Cybersecurity Internship Programme',
-      'Completed Stage 0 — Foundations with a score of 94/100 (passing mark: 70)',
-      'Demonstrated skills in reading auth logs, spotting dismissal patterns, and briefing non-technical leaders',
-      'Advanced to Stage 1 — Applied Cryptography on the basis of capstone assessment results',
-      'Earned access to the UBI Alumni Network (The Root Access Network) and exclusive cybersecurity workshops',
+      'Completed Stage 0 — Foundations with a score of 94/100; auth-log analysis and dismissal-pattern report directly led to a board-funded emergency cryptography audit',
+      'Completed Stage 1 — Applied Cryptography: decrypted attacker artefacts (AES-CBC, JWT forgery, classical ciphers) and wrote a cryptographic post-mortem with five concrete controls for the Sankofa board',
+      'Completed Stage 2 — Web Application Security: produced a pentest-style findings report with CVSS vector strings, full exploit chain reconstruction, and an OWASP-mapped remediation plan ranked by business risk',
+      'Completed Stage 3 — Incident Response (DFIR): analysed compromised workstation artefacts (memory, syslog, netflow, SIEM), built incident timeline, extracted IOCs, mapped techniques to MITRE ATT&CK, and wrote formal report for CISO and Counsel',
+      'Advanced to Stage 4 (Chapter 4 of 5) — earned access to the UBI Alumni Network (The Root Access Network) and exclusive cybersecurity workshops',
     ],
   },
   {
@@ -27,11 +27,11 @@ const experiences = [
     type: 'Internship',
     color: 'terracotta',
     description:
-      '3-month remote cybersecurity internship focused on real-world security tasks and industry-level projects to strengthen technical and professional skills.',
+      '3-month remote cybersecurity internship focused on industry-level security projects covering vulnerability assessment, ethical hacking, and professional security reporting.',
     achievements: [
-      'Selected for cybersecurity internship programme (Intern ID: 5KT261203)',
-      'Gaining hands-on exposure through real-world security tasks and industry-level projects',
-      'Developing technical skills, problem-solving abilities, and professional workflows in a dynamic environment',
+      'Completed Network Vulnerability Assessment & Remediation — full VAPT on Metasploitable with 3 proof-of-concept exploits, professional security report, and remediation guide',
+      'Completed Vulnerability Assessment of Legacy Services — security assessment of FTP, Telnet, and NFS protocols with PoC demonstrations and remediation recommendations',
+      'Developed industry-standard documentation, GitHub repositories, and technical project walkthroughs',
       'Eligible for Internship Completion Certificate and performance-based Letter of Recommendation',
     ],
   },
