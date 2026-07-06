@@ -16,7 +16,8 @@ const experiences = [
       'Completed Stage 1 — Applied Cryptography: decrypted attacker artefacts (AES-CBC, JWT forgery, classical ciphers) and wrote a cryptographic post-mortem with five concrete controls for the Sankofa board',
       'Completed Stage 2 — Web Application Security: produced a pentest-style findings report with CVSS vector strings, full exploit chain reconstruction, and an OWASP-mapped remediation plan ranked by business risk',
       'Completed Stage 3 — Incident Response (DFIR): analysed compromised workstation artefacts (memory, syslog, netflow, SIEM), built incident timeline, extracted IOCs, mapped techniques to MITRE ATT&CK, and wrote formal report for CISO and Counsel',
-      'Advanced to Stage 4 (Chapter 4 of 5) — earned access to the UBI Alumni Network (The Root Access Network) and exclusive cybersecurity workshops',
+      'Completed Stage 4 — Governance & Risk: wrote the risk register, regulator breach notification, board memo, 30/60/90 remediation roadmap, and ISO 27001 / NIST CSF control mapping for the Sankofa Digital case',
+      'Completed Cyber Core (Stages 0–4) with a final score of 95/100 against a 70 pass mark — promoted from Intern to Cyber Core Associate and advanced to Stage 5, Track Specialisation',
     ],
   },
   {

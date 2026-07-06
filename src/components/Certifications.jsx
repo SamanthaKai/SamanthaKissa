@@ -3,6 +3,14 @@ import { Award, Shield, Brain, Terminal, BookOpen, Cloud } from 'lucide-react'
 
 const certs = [
   {
+    icon: Award,
+    title: 'Cyber Core Associate',
+    issuer: 'Ubuntu Bridge Initiative',
+    year: '2026',
+    color: 'gold',
+    description: 'Completed Cyber Core (Stages 0–4) of the UBI Cybersecurity Internship — SOC analysis, applied cryptography, web exploitation, DFIR, and governance & risk — scoring 95/100 and earning promotion from Intern to Associate.',
+  },
+  {
     icon: Brain,
     title: 'AI for Beginners',
     issuer: 'Microsoft / LinkedIn Learning',
