@@ -191,7 +191,7 @@ export default function Hero() {
                 <p className="text-[10px] text-charcoal/50 dark:text-cream/50 mb-0.5">Status</p>
                 <div className="flex items-center gap-1.5">
                   <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse" />
-                  <p className="text-xs font-semibold text-charcoal dark:text-cream">Final Year IT Student</p>
+                  <p className="text-xs font-semibold text-charcoal dark:text-cream">Cyber Core Associate</p>
                 </div>
               </motion.div>
             </div>
