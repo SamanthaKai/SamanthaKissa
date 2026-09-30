@@ -3,10 +3,9 @@ import { Menu, X, Moon, Sun } from 'lucide-react'
 
 const links = [
   { label: 'About', href: '#about' },
-  { label: 'Skills', href: '#skills' },
   { label: 'Experience', href: '#experience' },
   { label: 'Projects', href: '#projects' },
-  { label: 'Certifications', href: '#certifications' },
+  { label: 'Credentials', href: '#credentials' },
   { label: 'Leadership', href: '#leadership' },
   { label: 'Contact', href: '#contact' },
 ]
@@ -16,61 +15,46 @@ export default function Navbar({ darkMode, toggleDark }) {
   const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    const handler = () => setScrolled(window.scrollY > 20)
+    const handler = () => setScrolled(window.scrollY > 10)
     window.addEventListener('scroll', handler)
     return () => window.removeEventListener('scroll', handler)
   }, [])
 
   return (
     <nav
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-        scrolled
-          ? 'glass shadow-card py-3'
-          : 'bg-transparent py-5'
+      className={`fixed top-0 left-0 right-0 z-50 bg-paper/95 dark:bg-night/95 backdrop-blur-sm transition-colors ${
+        scrolled || open ? 'border-b border-charcoal/10 dark:border-cream/10' : 'border-b border-transparent'
       }`}
     >
-      <div className="max-w-6xl mx-auto px-6 flex items-center justify-between">
-        {/* Logo */}
-        <a
-          href="#hero"
-          className="font-heading font-700 text-xl tracking-tight text-olive-500 dark:text-olive-300 hover:opacity-80 transition-opacity"
-        >
-          SK<span className="text-gold">.</span>
+      <div className="max-w-5xl mx-auto px-6 h-16 flex items-center justify-between">
+        <a href="#hero" className="font-heading text-xl font-medium text-charcoal dark:text-cream">
+          Samantha Kissa
         </a>
 
-        {/* Desktop links */}
-        <div className="hidden md:flex items-center gap-6">
-          {links.map((l) => (
-            <a
-              key={l.href}
-              href={l.href}
-              className="font-body text-sm font-medium text-charcoal/70 dark:text-cream/70 hover:text-olive-500 dark:hover:text-olive-300 transition-colors"
-            >
-              {l.label}
-            </a>
-          ))}
-        </div>
+        <div className="flex items-center gap-6">
+          <div className="hidden md:flex items-center gap-6">
+            {links.map((l) => (
+              <a
+                key={l.href}
+                href={l.href}
+                className="text-sm text-charcoal/65 dark:text-cream/65 hover:text-charcoal dark:hover:text-cream transition-colors"
+              >
+                {l.label}
+              </a>
+            ))}
+          </div>
 
-        {/* Right controls */}
-        <div className="flex items-center gap-3">
           <button
             onClick={toggleDark}
-            className="p-2 rounded-lg text-charcoal/60 dark:text-cream/60 hover:bg-olive-500/10 transition-colors"
+            className="p-2 -mr-2 rounded-md text-charcoal/60 dark:text-cream/60 hover:text-charcoal dark:hover:text-cream transition-colors"
             aria-label="Toggle dark mode"
           >
-            {darkMode ? <Sun size={18} /> : <Moon size={18} />}
+            {darkMode ? <Sun size={17} /> : <Moon size={17} />}
           </button>
-
-          <a
-            href="#contact"
-            className="hidden md:inline-flex items-center gap-2 px-4 py-2 rounded-lg bg-olive-500 text-cream text-sm font-medium hover:bg-olive-600 transition-colors shadow-sm"
-          >
-            Get in touch
-          </a>
 
           <button
             onClick={() => setOpen(!open)}
-            className="md:hidden p-2 rounded-lg text-charcoal/60 dark:text-cream/60 hover:bg-olive-500/10 transition-colors"
+            className="md:hidden p-2 -mr-2 rounded-md text-charcoal/60 dark:text-cream/60"
             aria-label="Toggle menu"
           >
             {open ? <X size={20} /> : <Menu size={20} />}
@@ -78,28 +62,18 @@ export default function Navbar({ darkMode, toggleDark }) {
         </div>
       </div>
 
-      {/* Mobile menu */}
       {open && (
-        <div className="md:hidden glass border-t border-olive-500/10 px-6 py-4">
-          <div className="flex flex-col gap-4">
-            {links.map((l) => (
-              <a
-                key={l.href}
-                href={l.href}
-                onClick={() => setOpen(false)}
-                className="font-body text-sm font-medium text-charcoal/80 dark:text-cream/80 hover:text-olive-500 dark:hover:text-olive-300 transition-colors"
-              >
-                {l.label}
-              </a>
-            ))}
+        <div className="md:hidden px-6 pb-5 flex flex-col gap-4">
+          {links.map((l) => (
             <a
-              href="#contact"
+              key={l.href}
+              href={l.href}
               onClick={() => setOpen(false)}
-              className="inline-flex items-center justify-center px-4 py-2.5 rounded-lg bg-olive-500 text-cream text-sm font-medium hover:bg-olive-600 transition-colors"
+              className="text-sm text-charcoal/80 dark:text-cream/80"
             >
-              Get in touch
+              {l.label}
             </a>
-          </div>
+          ))}
         </div>
       )}
     </nav>

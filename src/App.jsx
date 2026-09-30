@@ -5,12 +5,18 @@ import About from './components/About'
 import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Projects from './components/Projects'
-import TechArchitecture from './components/TechArchitecture'
 import HowIBuild from './components/HowIBuild'
 import Certifications from './components/Certifications'
+import Communities from './components/Communities'
 import Leadership from './components/Leadership'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
+import CookSmart from './pages/CookSmart'
+
+// Hash-based routing so the CookSmart page works on any static host without rewrites.
+function getRoute() {
+  return window.location.hash === '#/cooksmart' ? 'cooksmart' : 'home'
+}
 
 export default function App() {
   const [darkMode, setDarkMode] = useState(() => {
@@ -21,6 +27,7 @@ export default function App() {
     }
     return false
   })
+  const [route, setRoute] = useState(getRoute)
 
   useEffect(() => {
     const root = document.documentElement
@@ -33,24 +40,44 @@ export default function App() {
     }
   }, [darkMode])
 
-  return (
-    <div className={`min-h-screen font-body transition-colors duration-300 ${darkMode ? 'dark' : ''}`}>
-      {/* Subtle film-grain texture overlay */}
-      <div className="grain-overlay" aria-hidden="true" />
+  useEffect(() => {
+    const onHashChange = () => setRoute(getRoute())
+    window.addEventListener('hashchange', onHashChange)
+    return () => window.removeEventListener('hashchange', onHashChange)
+  }, [])
 
+  // After switching pages, jump to the top or to the section named in the hash.
+  useEffect(() => {
+    const hash = window.location.hash
+    if (route === 'home' && hash.length > 1 && !hash.startsWith('#/')) {
+      document.getElementById(hash.slice(1))?.scrollIntoView()
+    } else {
+      window.scrollTo(0, 0)
+    }
+    document.title = route === 'cooksmart' ? 'CookSmart | Samantha Kissa' : 'Samantha Kissa'
+  }, [route])
+
+  return (
+    <div className="min-h-screen font-body bg-paper dark:bg-night text-charcoal dark:text-cream">
       <Navbar darkMode={darkMode} toggleDark={() => setDarkMode((d) => !d)} />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Experience />
-        <Projects />
-        <TechArchitecture />
-        <HowIBuild />
-        <Certifications />
-        <Leadership />
-        <Contact />
-      </main>
+      {route === 'cooksmart' ? (
+        <main>
+          <CookSmart />
+        </main>
+      ) : (
+        <main>
+          <Hero />
+          <About />
+          <Skills />
+          <Experience />
+          <Projects />
+          <HowIBuild />
+          <Certifications />
+          <Communities />
+          <Leadership />
+          <Contact />
+        </main>
+      )}
       <Footer />
     </div>
   )
