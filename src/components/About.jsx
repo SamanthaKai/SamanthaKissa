@@ -1,49 +1,54 @@
-import Section from './Section'
+import { Container, Heading, Reveal } from './ui'
 
-const areas = [
+const habits = [
   {
-    title: 'Cybersecurity',
-    body: 'Hands-on experience in vulnerability assessment, penetration testing, threat hunting, incident response, and security analysis.',
+    lead: 'Find the real problem.',
+    body: "The first version of a problem is rarely the real one. I'd rather spend time asking what's actually wrong, and who it's for, before I build anything.",
   },
   {
-    title: 'AI & Software Development',
-    body: 'I build web applications and work with AI APIs to create practical tools and user-focused solutions.',
+    lead: 'Read the logs first.',
+    body: 'When something breaks, my first guess is usually wrong. The logs usually aren\'t. So I read them before I start changing things.',
   },
   {
-    title: 'IT & Systems',
-    body: 'My IT background gives me a broader understanding of how software, infrastructure, data, and people work together.',
+    lead: "Security isn't the last step.",
+    body: "Once you've seen how an exposed database or a leaked key gets used, you stop treating security as something to add before launch.",
   },
 ]
 
 export default function About() {
   return (
-    <Section id="about" title="About Me">
-      <div className="space-y-5 text-base leading-relaxed text-charcoal/75 dark:text-cream/75 max-w-2xl">
-        <p>
-          I&apos;m Samantha Kissa, an Information Technology graduate from Uganda with a growing focus on cybersecurity.
-        </p>
-        <p>
-          My experience spans cybersecurity, software development, AI, and digital data collection. I&apos;ve worked on security assessments, incident response exercises, AI-powered applications, and projects that required both technical problem-solving and clear communication.
-        </p>
-        <p>
-          I enjoy understanding how systems work, finding where they can be improved, and building things that are useful in the real world.
-        </p>
-        <p>
-          I&apos;m particularly interested in cybersecurity and the role technology can play in solving problems across Africa.
-        </p>
-      </div>
-
-      <h3 className="mt-12 mb-6 text-sm font-semibold text-charcoal dark:text-cream">
-        A little more about my work
-      </h3>
-      <div className="grid sm:grid-cols-3 gap-8">
-        {areas.map(({ title, body }) => (
-          <div key={title}>
-            <h4 className="font-medium text-olive-600 dark:text-olive-300 mb-2">{title}</h4>
-            <p className="text-sm leading-relaxed text-charcoal/70 dark:text-cream/70">{body}</p>
+    <section id="about" className="py-24 sm:py-32">
+      <Container>
+        <Reveal className="grid lg:grid-cols-12 gap-x-10 gap-y-8">
+          <Heading className="lg:col-span-4 text-4xl sm:text-5xl">About me</Heading>
+          <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-[17px] leading-relaxed text-charcoal/75 dark:text-cream/75">
+            <p>
+              I graduated in Information Technology from Mbarara University of Science and Technology in 2026. Of everything I studied, security is the part I want to go deeper in.
+            </p>
+            <p>
+              These days most of my time goes into security operations: reading logs, working through simulated incidents, and poking at systems that were built to be broken. I also build software, mostly web apps that use AI.
+            </p>
+            <p>
+              The two teach me different things. Labs show me how systems break. Building my own shows me how easy it is to be the person who broke them.
+            </p>
+            <p>
+              In 2025 I joined the Aspire Leadership Program with a global cohort of emerging leaders. It left me with harder questions than I came in with: what kind of leader do I want to be, and what work do I actually want to contribute, especially here in Africa?
+            </p>
           </div>
-        ))}
-      </div>
-    </Section>
+        </Reveal>
+
+        <Reveal className="mt-24 sm:mt-28 grid lg:grid-cols-12 gap-x-10 gap-y-10">
+          <h3 className="lg:col-span-4 text-sm text-charcoal/50 dark:text-cream/50 pt-1">How I work</h3>
+          <div className="lg:col-span-8 grid sm:grid-cols-3 gap-10">
+            {habits.map(({ lead, body }) => (
+              <div key={lead} className="border-t border-charcoal/15 dark:border-cream/15 pt-5">
+                <p className="font-heading text-xl text-charcoal dark:text-cream">{lead}</p>
+                <p className="mt-3 text-[15px] leading-relaxed text-charcoal/65 dark:text-cream/65">{body}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+      </Container>
+    </section>
   )
 }
