@@ -2,11 +2,11 @@ import { Container, Heading, Reveal } from './ui'
 
 const credentials = [
   { title: 'Cyber Core Associate', issuer: 'Ubuntu Bridge Initiative' },
-  { title: 'AWS AI Practitioner Challenge', issuer: 'Amazon Web Services' },
-  { title: 'Cyber Threat Hunting', issuer: 'Tech4Dev Women Techsters' },
-  { title: 'Introduction to Kali Linux', issuer: 'Offensive Security' },
+  { title: 'AWS AI Practitioner Challenge', issuer: 'Udacity' },
+  { title: 'Introduction to Kali Linux Basics', issuer: 'Simplilearn SkillUp' },
+  { title: 'Cyber Threat Hunting', issuer: 'Infosec, via Coursera' },
+  { title: 'AI for Beginners', issuer: 'HP LIFE' },
   { title: 'Introduction to Cybersecurity', issuer: 'Cisco Networking Academy' },
-  { title: 'AI for Beginners', issuer: 'Microsoft / LinkedIn Learning' },
 ]
 
 const communities = [
