@@ -10,7 +10,7 @@ const roles = [
   },
   {
     when: 'September 2025–present',
-    kind: 'Structured training',
+    kind: 'Fellowship',
     org: 'Tech4Dev Women Techsters',
     role: 'Cybersecurity Fellow',
     summary: 'Where a lot of my hands-on practice happens: labs, real tools and simulated attacks.',
