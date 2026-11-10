@@ -7,12 +7,11 @@ import Experience from './components/Experience'
 import Credentials from './components/Credentials'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
-import CookSmart from './pages/CookSmart'
 import ExperienceDetail from './pages/ExperienceDetail'
 
 // Hash-based routing so subpages work on any static host without rewrites.
+// Project case studies open in a drawer on the home page (see Work).
 const pages = {
-  '#/cooksmart': { component: CookSmart, title: 'CookSmart | Samantha Kissa' },
   '#/experience': { component: ExperienceDetail, title: 'Experience | Samantha Kissa' },
 }
 

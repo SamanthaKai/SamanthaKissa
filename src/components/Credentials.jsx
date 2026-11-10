@@ -1,4 +1,4 @@
-import { Container, Heading, Reveal } from './ui'
+import { Chapter, Container, Heading, Reveal } from './ui'
 
 const credentials = [
   { title: 'Cyber Core Associate', issuer: 'Ubuntu Bridge Initiative' },
@@ -25,7 +25,8 @@ export default function Credentials() {
     <section id="credentials" className="py-24 sm:py-32 border-t border-charcoal/10 dark:border-cream/10">
       <Container className="grid lg:grid-cols-12 gap-x-10 gap-y-20">
         <Reveal className="lg:col-span-6">
-          <Heading className="text-3xl sm:text-4xl">Credentials</Heading>
+          <Chapter n="04">Along the way</Chapter>
+          <Heading className="mt-5 text-3xl sm:text-4xl">Credentials</Heading>
           <ul className="mt-10">
             {credentials.map(({ title, issuer }) => (
               <li
@@ -40,7 +41,7 @@ export default function Credentials() {
         </Reveal>
 
         <Reveal className="lg:col-span-5 lg:col-start-8">
-          <Heading className="text-3xl sm:text-4xl">Communities I&apos;m a part of</Heading>
+          <Heading className="lg:mt-9 text-3xl sm:text-4xl">Communities I&apos;m a part of</Heading>
           <div className="mt-10 space-y-8">
             {communities.map(({ name, body }) => (
               <div key={name}>

@@ -1,4 +1,4 @@
-import { Container, Heading, Reveal } from './ui'
+import { Chapter, Container, Heading, Reveal } from './ui'
 
 const habits = [
   {
@@ -20,7 +20,10 @@ export default function About() {
     <section id="about" className="py-24 sm:py-32">
       <Container>
         <Reveal className="grid lg:grid-cols-12 gap-x-10 gap-y-8">
-          <Heading className="lg:col-span-4 text-4xl sm:text-5xl">About me</Heading>
+          <div className="lg:col-span-4">
+            <Chapter n="01">Who I am</Chapter>
+            <Heading className="mt-5 text-4xl sm:text-5xl">About me</Heading>
+          </div>
           <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-[17px] leading-relaxed text-charcoal/75 dark:text-cream/75">
             <p>
               I graduated in Information Technology from Mbarara University of Science and Technology in 2026. Of everything I studied, security is the part I want to go deeper in.

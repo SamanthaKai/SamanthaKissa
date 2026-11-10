@@ -1,8 +1,8 @@
 import { useState } from 'react'
-import { Container, Heading, Reveal, TextLink } from './ui'
+import { Chapter, Container, Heading, Reveal, TextLink } from './ui'
 
 const inputClass =
-  'w-full px-0 py-2.5 bg-transparent border-0 border-b border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream text-[15px] placeholder:text-charcoal/35 dark:placeholder:text-cream/35 focus:outline-none focus:ring-0 focus:border-olive-600 dark:focus:border-olive-300 transition-colors'
+  'w-full px-0 py-2.5 bg-transparent border-0 border-b border-charcoal/20 dark:border-cream/20 text-charcoal dark:text-cream text-[15px] placeholder:text-charcoal/35 dark:placeholder:text-cream/35 focus:outline-none focus:ring-0 focus:border-brass-600 dark:focus:border-brass-300 transition-colors'
 
 const labelClass = 'block text-sm text-charcoal/55 dark:text-cream/55'
 
@@ -40,7 +40,8 @@ export default function Contact() {
     <section id="contact" className="py-24 sm:py-32 border-t border-charcoal/10 dark:border-cream/10">
       <Container className="grid lg:grid-cols-12 gap-x-10 gap-y-16">
         <Reveal className="lg:col-span-6">
-          <Heading className="text-5xl sm:text-6xl">Let&apos;s talk.</Heading>
+          <Chapter n="05">What comes next</Chapter>
+          <Heading className="mt-5 text-5xl sm:text-6xl">Let&apos;s talk.</Heading>
           <p className="mt-8 max-w-md text-[17px] leading-relaxed text-charcoal/75 dark:text-cream/75">
             I&apos;m open to entry-level roles, internships, fellowships and projects in cybersecurity, AI and software. If you&apos;d like to talk about any of those, or you just want to talk security, I&apos;d be glad to hear from you.
           </p>
@@ -48,7 +49,7 @@ export default function Contact() {
             href="https://mail.google.com/mail/?view=cm&fs=1&to=kissasamantha123@gmail.com"
             target="_blank"
             rel="noreferrer"
-            className="mt-10 inline-block font-heading text-2xl sm:text-3xl text-charcoal dark:text-cream underline decoration-charcoal/25 dark:decoration-cream/25 underline-offset-8 hover:decoration-olive-600 dark:hover:decoration-olive-300 transition-colors break-all"
+            className="mt-10 inline-block font-heading text-2xl sm:text-3xl text-charcoal dark:text-cream underline decoration-charcoal/25 dark:decoration-cream/25 underline-offset-8 hover:decoration-brass-600 dark:hover:decoration-brass-300 transition-colors break-all"
           >
             kissasamantha123@gmail.com
           </a>
@@ -68,7 +69,7 @@ export default function Contact() {
               </p>
               <button
                 onClick={() => { setStatus(null); setForm(empty) }}
-                className="mt-6 text-sm font-medium text-olive-600 dark:text-olive-300 hover:underline underline-offset-4"
+                className="mt-6 text-sm font-medium text-brass-600 dark:text-brass-300 hover:underline underline-offset-4"
               >
                 Send another message
               </button>
@@ -107,7 +108,7 @@ export default function Contact() {
               <button
                 type="submit"
                 disabled={status === 'sending'}
-                className="px-6 py-3 rounded-full bg-charcoal dark:bg-cream text-paper dark:text-night text-sm font-medium hover:bg-olive-700 dark:hover:bg-olive-200 disabled:opacity-60 transition-colors"
+                className="px-6 py-3 rounded-full bg-charcoal dark:bg-cream text-paper dark:text-night text-sm font-medium hover:bg-brass-700 dark:hover:bg-brass-200 disabled:opacity-60 transition-colors"
               >
                 {status === 'sending' ? 'Sending...' : 'Send message'}
               </button>

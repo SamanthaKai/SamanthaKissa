@@ -104,7 +104,7 @@ export default function ExperienceDetail() {
             <ul className="mt-6 space-y-3">
               {points.map((p) => (
                 <li key={p} className="flex gap-3">
-                  <span className="mt-[0.6rem] w-1 h-1 rounded-full bg-olive-600 dark:bg-olive-300 flex-shrink-0" />
+                  <span className="mt-[0.6rem] w-1 h-1 rounded-full bg-brass-600 dark:bg-brass-300 flex-shrink-0" />
                   {p}
                 </li>
               ))}

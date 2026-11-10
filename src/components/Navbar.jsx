@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { motion, useScroll, useSpring } from 'framer-motion'
 import { Menu, X, Moon, Sun } from 'lucide-react'
 
 const links = [
@@ -11,6 +12,8 @@ const links = [
 export default function Navbar({ darkMode, toggleDark }) {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { scrollYProgress } = useScroll()
+  const progress = useSpring(scrollYProgress, { stiffness: 200, damping: 40 })
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 10)
@@ -60,6 +63,13 @@ export default function Navbar({ darkMode, toggleDark }) {
           </div>
         </div>
       </div>
+
+      {/* How far through the story the reader is. */}
+      <motion.div
+        aria-hidden="true"
+        style={{ scaleX: progress }}
+        className="absolute left-0 right-0 bottom-0 h-px origin-left bg-brass-500 dark:bg-brass-300"
+      />
 
       {open && (
         <div className="md:hidden px-6 pb-6 pt-2 flex flex-col gap-4">

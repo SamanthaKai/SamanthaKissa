@@ -1,26 +1,35 @@
 /** @type {import('tailwindcss').Config} */
+// Palette taken from the hero photo: warm linen walls, a black blazer,
+// amber lamp light (brass) and the office plants (leaf).
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
   darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        olive: {
-          50: '#f7f8f2',
-          100: '#edf0e0',
-          200: '#d8dec0',
-          300: '#b8c494',
-          400: '#93a463',
-          500: '#556B2F',
-          600: '#4a5e28',
-          700: '#3d4e22',
-          800: '#323f1d',
-          900: '#2b3519',
+        brass: {
+          50: '#FBF5EC',
+          100: '#F4E6CF',
+          200: '#E8CB9E',
+          300: '#D9AA6B',
+          400: '#C98F48',
+          500: '#B07535',
+          600: '#8A5A26',
+          700: '#6F471F',
+          800: '#52351A',
+          900: '#3A2614',
         },
-        paper: '#FAF9F6',
-        night: '#141513',
-        cream: '#EDEBE6',
-        charcoal: '#1F201D',
+        leaf: {
+          300: '#A9BE8C',
+          500: '#5E7A45',
+          700: '#33452A',
+          900: '#1C2618',
+        },
+        paper: '#F6F1EA',
+        night: '#13110F',
+        cream: '#EFE8DE',
+        charcoal: '#1B1714',
+        espresso: '#221D19',
       },
       fontFamily: {
         heading: ['Newsreader', 'Georgia', 'serif'],

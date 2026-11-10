@@ -1,4 +1,4 @@
-import { Container, Heading, Reveal, TextLink } from './ui'
+import { Chapter, Container, Heading, Reveal, TextLink } from './ui'
 
 const roles = [
   {
@@ -29,7 +29,8 @@ export default function Experience() {
     <section id="experience" className="py-24 sm:py-32 border-t border-charcoal/10 dark:border-cream/10">
       <Container>
         <Reveal>
-          <Heading className="text-4xl sm:text-5xl">Experience &amp; Training</Heading>
+          <Chapter n="03">Where I&apos;ve learned</Chapter>
+          <Heading className="mt-5 text-4xl sm:text-5xl">Experience &amp; Training</Heading>
         </Reveal>
 
         <Reveal as="ul" className="mt-14 sm:mt-16 border-t border-charcoal/15 dark:border-cream/15">
@@ -40,7 +41,7 @@ export default function Experience() {
             >
               <div className="md:col-span-3 md:pt-1">
                 <p className="text-sm text-charcoal/50 dark:text-cream/50">{when}</p>
-                <p className="mt-1 text-sm text-olive-600 dark:text-olive-300">{kind}</p>
+                <p className="mt-1 text-sm text-brass-600 dark:text-brass-300">{kind}</p>
               </div>
               <div className="md:col-span-4">
                 <p className="font-heading text-xl text-charcoal dark:text-cream">{org}</p>

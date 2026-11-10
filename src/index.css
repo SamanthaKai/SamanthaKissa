@@ -11,13 +11,18 @@
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background-color: #FAF9F6;
-    color: #1F201D;
+    background-color: #F6F1EA;
+    color: #1B1714;
   }
 
   .dark body {
-    background-color: #141513;
-    color: #EDEBE6;
+    background-color: #13110F;
+    color: #EFE8DE;
+  }
+
+  ::selection {
+    background: #E8CB9E;
+    color: #1B1714;
   }
 
   section[id] {
@@ -45,6 +50,25 @@
   .hero-in-late {
     animation-delay: 0.15s;
   }
+
+  /* The hero photo opens like a curtain from the bottom. */
+  .photo-in {
+    animation: photo-in 1.3s cubic-bezier(0.65, 0, 0.35, 1) 0.1s both;
+  }
+
+  /* Underline that draws itself in on hover. */
+  .draw-underline {
+    background-image: linear-gradient(currentColor, currentColor);
+    background-size: 0% 1px;
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+  }
+
+  .draw-underline:hover,
+  .draw-underline:focus-visible {
+    background-size: 100% 1px;
+  }
 }
 
 @keyframes hero-in {
@@ -52,8 +76,13 @@
   to   { opacity: 1; transform: translateY(0); }
 }
 
+@keyframes photo-in {
+  from { clip-path: inset(100% 0 0 0 round 1rem); }
+  to   { clip-path: inset(0 0 0 0 round 1rem); }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   .section-reveal { opacity: 1; transform: none; transition: none; }
-  .hero-in { animation: none; }
+  .hero-in, .photo-in { animation: none; }
 }
