@@ -6,7 +6,7 @@ export const projects = [
     kind: 'Full-stack web app, 2026',
     title: 'CookSmart',
     summary:
-      'An AI recipe platform for African food. Getting AI to write a recipe turned out to be the easy part. Getting it to write one that is true to the dish was the real work. I led the project and built it end to end.',
+      'An AI-powered platform for discovering and cooking African recipes. Getting AI to generate a recipe was easy. Making sure the recipes stayed true to the actual dishes was the bigger challenge. I led the project and built it from the ground up.',
     visual: 'image',
     image: {
       src: '/cooksmart.jpg',
@@ -14,7 +14,7 @@ export const projects = [
     },
     tone: 'light',
     caseStudy: {
-      lede: 'A web app that helps people find, understand and cook African recipes, with AI that works from real recipes instead of guessing.',
+      lede: 'A web app that makes it easier to find, explore and cook African recipes. It uses real recipes stored in a database to give AI more accurate information to work with.',
       liveUrl: 'https://cooksmart-seven.vercel.app/',
       facts: [
         { label: 'Role', value: 'Project lead and full-stack developer' },
@@ -26,49 +26,47 @@ export const projects = [
         {
           title: 'Why I built it',
           paragraphs: [
-            'CookSmart started with a simple idea: make African recipes easier to discover, understand, and adapt to different needs.',
-            'Getting an AI model to write a recipe is easy. Getting one that is true to the dish is harder.',
-            'That second part is the problem I actually wanted to solve.',
+            'CookSmart started with a simple idea: make African recipes easier to find, understand and adapt to different needs.',
+            "Getting AI to generate a recipe isn't difficult. Getting it to produce something that actually reflects the dish is another matter. I wanted to work on that difference.",
           ],
         },
         {
           title: 'How it works',
           paragraphs: [
-            'Instead of asking a model to make up a recipe from nothing, CookSmart first looks up real recipes in its database and hands them to the model as context. The model works from something real, not from whatever it thinks jollof rice probably is.',
+            'Rather than asking AI to create recipes from scratch, CookSmart first searches its database for real recipes. It then gives those recipes to the AI as a reference, helping it produce more relevant results.',
           ],
           flow: [
-            { step: 'Someone asks for a recipe', where: 'React app on Vercel' },
-            { step: 'The backend finds real recipes that match', where: 'Flask and PostgreSQL on Railway' },
-            { step: 'LLaMA 3 writes the recipe, using those records as context', where: 'Groq API' },
-            { step: 'Claude adds cooking tips and nutrition insights', where: 'Claude API' },
+            { step: 'Someone searches for a recipe', where: 'React app on Vercel' },
+            { step: 'The backend searches for matching recipes', where: 'Flask and PostgreSQL on Railway' },
+            { step: 'LLaMA 3 generates the recipe using the information found', where: 'Groq API' },
+            { step: 'Claude provides additional cooking tips and nutrition information', where: 'Claude API' },
           ],
         },
         {
           title: 'Decisions along the way',
           items: [
             {
-              title: 'Two models, two jobs',
+              title: 'Using two models',
               body: [
-                "I didn't need one model to do everything. LLaMA 3 on Groq writes the recipes, because it's fast. Claude handles the cooking tips and nutrition insights. Flask decides which one gets called, and when.",
+                'I decided not to make one AI model handle everything. LLaMA 3 on Groq generates the recipes, while Claude provides cooking tips and nutrition information. Flask manages which model is used and when.',
               ],
             },
             {
-              title: 'Rate limits are real',
+              title: 'Handling rate limits',
               body: [
-                'Groq has rate limits, and under load some requests simply failed. Nobody wants to ask for a recipe and get an error, so I added retries with backoff and a queue to fall back on.',
+                'Groq has limits on how many requests can be made, and some requests failed when the system was busy. I added retries, delays and a backup queue to help handle these situations.',
               ],
             },
             {
-              title: 'Keys stay on the server',
+              title: 'Keeping API keys safe',
               body: [
-                'The API keys for Groq, Claude and the database live in environment variables on Railway. Nothing secret goes anywhere near the browser.',
+                'The API keys for Groq, Claude and the database are stored as environment variables on Railway. They are not exposed in the browser.',
               ],
             },
             {
-              title: 'Production had other ideas',
+              title: 'Fixing deployment issues',
               body: [
-                'The frontend runs on Vercel and the backend on Railway. Some of the CORS issues only showed up after deployment. Everything looked fine locally, then production had other ideas.',
-                'Fixing it meant sorting out preflight headers and environment settings on a live app. Now I test the production setup much earlier, before it has a chance to surprise me.',
+                'The frontend runs on Vercel and the backend on Railway. Some problems only appeared after deployment, especially with CORS. Everything worked locally, but the live application had different requirements. I had to fix the preflight headers and environment settings. This taught me to test the production setup much earlier instead of waiting until the end.',
               ],
             },
           ],
@@ -76,14 +74,14 @@ export const projects = [
         {
           title: 'My role',
           paragraphs: [
-            'I led the project from the first idea to a live site people can actually use. Along the way I wrote the prompts, connected the APIs, built the Flask and PostgreSQL backend and the React frontend, and did a fair amount of debugging in production.',
+            'I led the project from the initial idea to the finished website. I worked on the prompts, connected the APIs, built the Flask and PostgreSQL backend, developed the React frontend, and handled debugging during deployment.',
           ],
         },
         {
           title: 'What I learned',
           paragraphs: [
-            'Getting each part working on its own was the easy bit. Getting them to work together, in production, is where most of the learning happened.',
-            'It also made me pay attention to the things that never show up in a demo: API security, input validation, rate limiting, database access, CORS, deployment, and how far you can really trust what an AI model gives you.',
+            'Getting each part to work on its own was one thing. Getting everything to work together on a live website was a different experience.',
+            'The project also helped me pay more attention to things that are easy to overlook during development, such as API security, input validation, rate limits, database access, CORS and deployment. I also learned to be more careful about relying on AI-generated information without checking it.',
           ],
         },
       ],
@@ -94,16 +92,17 @@ export const projects = [
     kind: 'Offline AI tool, 2026',
     title: 'CodeScribe',
     summary:
-      'An assistant that writes documentation straight from Python code, with no internet connection. I built it for the Laptop LLM Challenge at the Africa Deep Tech Challenge 2026.',
+      'A tool that reads Python code and generates documentation without needing an internet connection. I built it for the Laptop LLM Challenge at the Africa Deep Tech Challenge 2026.',
     visual: 'code',
     tone: 'dark',
     caseStudy: {
-      lede: 'An assistant that writes documentation straight from Python code, with no internet connection.',
+      lede: 'A tool that generates documentation directly from Python code, without needing an internet connection.',
       sections: [
         {
           title: 'The project',
           paragraphs: [
-            "An assistant that writes documentation straight from Python code, with no internet connection. I built it for the Laptop LLM Challenge at the Africa Deep Tech Challenge 2026. After working with cloud APIs, this was a different kind of problem. On a laptop, model size and speed aren't details anymore. They decide whether the thing works at all.",
+            'I built CodeScribe for the Laptop LLM Challenge at the Africa Deep Tech Challenge 2026. It takes Python code and generates documentation locally, without relying on cloud services.',
+            'After working with online AI tools, I wanted to explore what it takes to run an AI model directly on a laptop. I had to work within the limits of the available memory, processing power and model size while making sure the tool remained useful.',
           ],
         },
       ],
@@ -114,16 +113,17 @@ export const projects = [
     kind: 'Security lab',
     title: 'Legacy services assessment',
     summary:
-      'A deliberately vulnerable machine, a VirtualBox lab, and old services like FTP, Telnet and NFS. I found and documented a way in through each.',
+      'A vulnerable machine, a VirtualBox lab, and older services like FTP, Telnet and NFS. I explored each service, found ways to access the machine, and documented my findings.',
     visual: 'terminal',
     tone: 'leaf',
     caseStudy: {
-      lede: 'Old protocols are a good reminder that "it still works" and "it\'s still safe" are not the same thing.',
+      lede: "Just because an old service still works doesn't mean it's safe.",
       sections: [
         {
           title: 'The lab',
           paragraphs: [
-            'A deliberately vulnerable machine (Metasploitable 2), a VirtualBox lab, and old services like FTP, Telnet and NFS. I found and documented a way in through each, and wrote it all up as two assessment reports. Old protocols are a good reminder that "it still works" and "it\'s still safe" are not the same thing.',
+            'I worked with a deliberately vulnerable machine (Metasploitable 2) inside a VirtualBox lab. I explored older services such as FTP, Telnet and NFS, identified ways to access the machine through each service, and documented my findings in two assessment reports.',
+            'The exercise helped me understand why older services can create security risks when they are left running without proper protection.',
           ],
         },
       ],

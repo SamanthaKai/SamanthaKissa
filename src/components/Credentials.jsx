@@ -12,11 +12,11 @@ const credentials = [
 const communities = [
   {
     name: 'Tech4Dev',
-    body: 'A technology and skills development community supporting young people across Africa.',
+    body: 'A community that helps young people across Africa develop technology skills and access opportunities.',
   },
   {
     name: 'Women in CyberSecurity (WiCyS)',
-    body: 'A professional community focused on supporting and connecting women in cybersecurity.',
+    body: 'A professional community that connects and supports women working in or pursuing cybersecurity.',
   },
 ]
 

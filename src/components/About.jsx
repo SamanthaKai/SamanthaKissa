@@ -2,16 +2,16 @@ import { Chapter, Container, Heading, Reveal } from './ui'
 
 const habits = [
   {
-    lead: 'Find the real problem.',
-    body: "The first version of a problem is rarely the real one. I'd rather spend time asking what's actually wrong, and who it's for, before I build anything.",
+    lead: 'Understand the problem first.',
+    body: 'Before jumping into a solution, I like to understand what is actually wrong, who it affects, and what needs to be done.',
   },
   {
-    lead: 'Read the logs first.',
-    body: 'When something breaks, my first guess is usually wrong. The logs usually aren\'t. So I read them before I start changing things.',
+    lead: 'Start with the evidence.',
+    body: "When something goes wrong, I don't want to rely on guesses. I look at the logs, check what happened, and work from there.",
   },
   {
-    lead: "Security isn't the last step.",
-    body: "Once you've seen how an exposed database or a leaked key gets used, you stop treating security as something to add before launch.",
+    lead: 'Think about security from the start.',
+    body: "Security shouldn't be something we remember just before launching a product. It needs to be part of how we build and manage systems.",
   },
 ]
 
@@ -26,16 +26,16 @@ export default function About() {
           </div>
           <div className="lg:col-span-7 lg:col-start-6 space-y-6 text-[17px] leading-relaxed text-charcoal/75 dark:text-cream/75">
             <p>
-              I graduated in Information Technology from Mbarara University of Science and Technology in 2026. Of everything I studied, security is the part I want to go deeper in.
+              I graduated with a Bachelor of Information Technology from Mbarara University of Science and Technology in 2026. Of everything I studied, cybersecurity is the area I want to explore further.
             </p>
             <p>
-              These days most of my time goes into security operations: reading logs, working through simulated incidents, and poking at systems that were built to be broken. I also build software, mostly web apps that use AI.
+              Most of my time goes into learning and practising security operations. I work with logs, investigate simulated incidents, and test systems to understand where they might be vulnerable. I also enjoy building software, especially web applications that use AI.
             </p>
             <p>
-              The two teach me different things. Labs show me how systems break. Building my own shows me how easy it is to be the person who broke them.
+              Working in both areas has taught me something important. Security labs help me understand how systems can be broken, while building software helps me see the other side and understand the decisions that go into making them work.
             </p>
             <p>
-              In 2025 I joined the Aspire Leadership Program with a global cohort of emerging leaders. It left me with harder questions than I came in with: what kind of leader do I want to be, and what work do I actually want to contribute, especially here in Africa?
+              In 2025, I joined the Aspire Leadership Program alongside a global group of emerging leaders. It gave me room to think more about the kind of leader I want to become and the contribution I hope to make, especially here in Africa.
             </p>
           </div>
         </Reveal>

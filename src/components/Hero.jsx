@@ -32,7 +32,7 @@ export default function Hero() {
             <em className="italic text-brass-600 dark:text-brass-300">cybersecurity</em>.
           </h1>
           <p className="mt-8 max-w-lg font-heading text-xl sm:text-2xl leading-snug text-charcoal/70 dark:text-cream/70">
-            Along the way, I work with AI and software. I&apos;m most curious about how systems are put together, and where they can go wrong.
+            I also enjoy working with AI and building software. I&apos;m curious about how technology works, how systems can fail, and how we can make them safer.
           </p>
 
           <div className="mt-12 flex flex-wrap items-center gap-x-8 gap-y-4 text-[15px]">

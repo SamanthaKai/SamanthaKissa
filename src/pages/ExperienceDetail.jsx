@@ -6,47 +6,53 @@ const roles = [
     org: 'Ubuntu Bridge Initiative',
     role: 'Cybersecurity Intern, SOC Analysis',
     when: 'June to August 2026, remote',
-    intro: 'Operation Root Access follows one simulated incident at a fictional fintech company across seven stages. You start as a Tier-1 analyst looking at login records, and by the end you are writing to the board. A lot of the story was already sitting in alerts someone had dismissed.',
-    points: [
-      'Investigated authentication logs and ticket history to find suspicious logins and alerts that had been wrongly dismissed.',
-      'Mapped the attack surface, including an exposed Elasticsearch index holding personal data, SQL injection, XSS, and SSRF to cloud metadata.',
-      'Traced persistence, a sudoers misconfiguration and C2 beaconing, then built the incident timeline and IOC list.',
-      'Wrote a GDPR breach notification, a risk register, a board memo and a 30/60/90 day remediation plan.',
-      'Triaged around 96 change records to separate legitimate changes from ones that needed escalation.',
+    intro: [
+      'Operation Root Access follows a simulated security incident at a fictional fintech company across seven stages. I started as a Tier 1 analyst reviewing login records and worked through the investigation until I had to present my findings to the board.',
+      'One thing that stood out was how much of the incident could have been spotted earlier. Some of the alerts that mattered had already been dismissed.',
     ],
-    outcome: 'I completed all seven stages, finished the Cyber Core stages with a score of 95/100, and was promoted from Intern to Cyber Core Associate.',
+    points: [
+      'Investigated authentication logs and ticket history to identify suspicious logins and alerts that had been wrongly dismissed.',
+      'Examined the attack surface, including an exposed Elasticsearch index containing personal data, SQL injection, XSS and SSRF to cloud metadata.',
+      'Traced persistence, a sudoers misconfiguration and C2 beaconing. I also prepared the incident timeline and list of indicators of compromise (IOCs).',
+      'Prepared a GDPR breach notification, risk register, board memo and 30/60/90-day remediation plan.',
+      'Reviewed around 96 change records to separate legitimate changes from those that needed further investigation.',
+    ],
+    outcome: 'I completed all seven stages, scored 95/100 in the Cyber Core stages, and progressed from Intern to Cyber Core Associate.',
   },
   {
     org: 'Karmix Tech',
     role: 'Cybersecurity Intern',
     when: 'June to August 2026, remote',
-    intro: 'Three months of vulnerability assessments and security reviews on live web applications. Finding the issue is half of the work. The other half is writing it up so the person who has to fix it actually can.',
+    intro: ['I spent three months working on vulnerability assessments and security reviews of live web applications. The work involved identifying weaknesses, understanding the risks they posed and preparing reports that could help teams fix them.'],
     points: [
-      'Ran vulnerability assessments and web application security reviews aligned to NIST CSF 2.0, ISO 27001:2022 and MITRE D3FEND.',
-      'Analysed the attack surface of live web applications and documented exposure points for remediation.',
-      'Wrote formal assessment reports for stakeholder and audit review.',
+      'Conducted vulnerability assessments and web application security reviews using NIST CSF 2.0, ISO 27001:2022 and MITRE D3FEND as references.',
+      'Reviewed the security of web applications and documented areas that needed attention.',
+      'Prepared assessment reports for stakeholders and audit reviews.',
     ],
   },
   {
     org: 'Tech4Dev Women Techsters',
     role: 'Cybersecurity Fellow',
     when: 'September 2025 to now, remote',
-    intro: 'The fellowship is where a lot of my hands-on practice happens: virtual labs, real tools and simulated attacks, across networking, cryptography, GRC and incident response.',
+    intro: ['The fellowship has given me room to practise cybersecurity using virtual labs, security tools and simulated attacks. My learning has covered networking, cryptography, governance, risk and compliance (GRC), and incident response.'],
     points: [
-      'Ran security assessments in virtual labs with Kali Linux, Nmap and Wireshark.',
+      'Practised security assessments in virtual labs using Kali Linux, Nmap and Wireshark.',
       'Configured and tested role-based access control policies in Active Directory.',
-      'Carried out wireless security audits and simulated penetration tests, from reconnaissance to post-exploitation.',
+      'Carried out wireless security audits and simulated penetration tests, from initial reconnaissance to post-exploitation.',
     ],
   },
   {
     org: 'Uganda Bureau of Statistics',
     role: 'Field Enumerator, Baseline Education Census 2025',
     when: 'June to August 2025, Uganda',
-    intro: 'Before most of my security work, I spent three months collecting data for the national education census. It took me to more than 100 schools and institutions, from city universities to rural primary schools. Getting people comfortable with a digital tool, often somewhere with poor connectivity, turned out to be part of the job.',
+    intro: [
+      'Before getting into cybersecurity, I spent three months collecting data for the national education census. The work took me to more than 100 schools and institutions, from city universities to rural primary schools.',
+      'I used digital tools to collect information, often working in areas with poor internet connectivity. It also gave me experience working with different people and helping them use digital tools to get the job done.',
+    ],
     points: [
       'Collected data using computer-assisted personal interviewing (CAPI).',
-      'Kept the data accurate and complete throughout collection.',
-      'Worked with school administrators, teachers and community members to get the data collected.',
+      'Checked information throughout the exercise to keep the data accurate and complete.',
+      'Worked with school administrators, teachers and community members during data collection.',
     ],
   },
 ]
@@ -84,7 +90,7 @@ export default function ExperienceDetail() {
       <header className="mt-12 pb-16 sm:pb-20 hero-in">
         <Heading as="h1" className="text-6xl sm:text-8xl leading-[0.95]">Experience</Heading>
         <p className="mt-8 max-w-2xl font-heading text-2xl sm:text-[1.75rem] leading-snug text-charcoal/75 dark:text-cream/75">
-          A closer look at each role, and what I took from it.
+          A closer look at the work I&apos;ve done, the skills I&apos;ve developed, and what I&apos;ve learned along the way.
         </p>
       </header>
 
@@ -100,7 +106,9 @@ export default function ExperienceDetail() {
             <p className="mt-1 text-sm text-charcoal/50 dark:text-cream/50">{when}</p>
           </div>
           <div className="lg:col-span-7 lg:col-start-6 text-[15px] leading-relaxed text-charcoal/75 dark:text-cream/75">
-            <p className="text-[17px]">{intro}</p>
+            <div className="space-y-4 text-[17px]">
+              {intro.map((p) => <p key={p}>{p}</p>)}
+            </div>
             <ul className="mt-6 space-y-3">
               {points.map((p) => (
                 <li key={p} className="flex gap-3">

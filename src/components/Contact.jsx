@@ -43,7 +43,7 @@ export default function Contact() {
           <Chapter n="05">What comes next</Chapter>
           <Heading className="mt-5 text-5xl sm:text-6xl">Let&apos;s talk.</Heading>
           <p className="mt-8 max-w-md text-[17px] leading-relaxed text-charcoal/75 dark:text-cream/75">
-            I&apos;m open to entry-level roles, internships, fellowships and projects in cybersecurity, AI and software. If you&apos;d like to talk about any of those, or you just want to talk security, I&apos;d be glad to hear from you.
+            I&apos;m open to entry-level opportunities, internships, fellowships and projects in cybersecurity, AI and software development. Whether you have an opportunity to share, would like to work together, or simply want to talk about security, I&apos;d be happy to hear from you.
           </p>
           <a
             href="https://mail.google.com/mail/?view=cm&fs=1&to=kissasamantha123@gmail.com"
@@ -63,7 +63,7 @@ export default function Contact() {
         <Reveal className="lg:col-span-5 lg:col-start-8">
           {status === 'sent' ? (
             <div className="border-t border-charcoal/15 dark:border-cream/15 pt-6">
-              <p className="font-heading text-2xl text-charcoal dark:text-cream">Thank you.</p>
+              <p className="font-heading text-2xl text-charcoal dark:text-cream">Thank you!</p>
               <p className="mt-3 text-[15px] text-charcoal/70 dark:text-cream/70">
                 Your message is on its way. I&apos;ll get back to you soon.
               </p>
@@ -76,7 +76,7 @@ export default function Contact() {
             </div>
           ) : (
             <form onSubmit={handleSubmit} className="space-y-7">
-              <p className="text-sm text-charcoal/50 dark:text-cream/50">Or send a message here</p>
+              <p className="text-sm text-charcoal/50 dark:text-cream/50">Or send me a message here.</p>
 
               <div className="grid sm:grid-cols-2 gap-7">
                 <div>
@@ -96,7 +96,7 @@ export default function Contact() {
 
               <div>
                 <label htmlFor="message" className={labelClass}>Message</label>
-                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={4} placeholder="Tell me what you have in mind..." className={`${inputClass} resize-none`} />
+                <textarea id="message" name="message" value={form.message} onChange={handleChange} required rows={4} placeholder="Tell me a little about what you have in mind..." className={`${inputClass} resize-none`} />
               </div>
 
               {status === 'error' && (

@@ -6,21 +6,21 @@ const roles = [
     kind: 'Structured training',
     org: 'Ubuntu Bridge Initiative',
     role: 'Cybersecurity Training Programme',
-    summary: 'Completed structured cybersecurity training involving a simulated SOC incident investigation. The exercise followed a suspicious login through investigation, analysis and reporting, culminating in a board-level incident report. Subsequently recognised as a Cyber Core Associate.',
+    summary: 'Completed hands-on cybersecurity training that included a simulated SOC incident investigation. I followed a suspicious login from the first alert through investigation and analysis, then prepared a report for the board. I was later recognised as a Cyber Core Associate.',
   },
   {
     when: 'September 2025–present',
     kind: 'Fellowship',
     org: 'Tech4Dev Women Techsters',
     role: 'Cybersecurity Fellow',
-    summary: 'Where a lot of my hands-on practice happens: labs, real tools and simulated attacks.',
+    summary: 'This is where I continue to build my practical cybersecurity skills through virtual labs, security tools and simulated attacks.',
   },
   {
     when: 'June–August 2025',
     kind: 'Professional experience',
     org: 'Uganda Bureau of Statistics',
     role: 'Field Enumerator',
-    summary: 'Collected data for the national education census in more than 100 schools and institutions, from city universities to rural primary schools.',
+    summary: 'Collected data for the national education census across more than 100 schools and institutions, from universities in urban areas to primary schools in rural communities.',
   },
 ]
 
