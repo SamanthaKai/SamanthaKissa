@@ -20,13 +20,13 @@ export default function Hero() {
           </div>
         </div>
 
-        {/* White studio background blends into the page in light mode. The wrapper carries
-            the page colour because the entrance animation isolates it as its own blend group. */}
-        <div className="lg:col-span-5 flex justify-center lg:justify-end bg-paper dark:bg-night hero-in hero-in-late">
+        <div className="lg:col-span-5 flex justify-center lg:justify-end hero-in hero-in-late">
           <img
-            src="/Me.jpeg"
+            src="/samantha.jpg"
             alt="Samantha Kissa"
-            className="w-72 sm:w-80 lg:w-full max-w-[420px] h-auto mix-blend-multiply dark:mix-blend-normal dark:rounded-t-lg dark:brightness-95"
+            width="900"
+            height="985"
+            className="w-72 sm:w-80 lg:w-full max-w-[420px] h-auto rounded-lg dark:brightness-95"
           />
         </div>
       </Container>
