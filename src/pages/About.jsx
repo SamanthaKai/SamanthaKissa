@@ -1,6 +1,6 @@
 import usePageMeta from '../hooks/usePageMeta'
 import { background, interests, approach, languages, intro, skills, coursework } from '../content/about'
-import { education } from '../content/credentials'
+import { education, scholarships } from '../content/credentials'
 import { person } from '../content/site'
 import PageEnd from '../components/PageEnd'
 import { ArrowLink, Label, PageHeader, SectionHead, Tags } from '../components/ui'
@@ -44,6 +44,10 @@ export default function About() {
             <p className="label text-paper/50">{degree.when}</p>
             <p className="display mt-4 text-[clamp(1.75rem,3vw,2.5rem)]">{degree.title}</p>
             <p className="mt-3 text-lg text-paper/80">{degree.issuer}</p>
+            <p className="mt-5 inline-flex items-center gap-2 font-mono text-[11px] uppercase tracking-label text-signal-bright">
+              <span aria-hidden="true" className="w-2 h-2 bg-signal-bright" />
+              {scholarships[0].title} recipient · {scholarships[0].when}
+            </p>
           </div>
           <p className="lg:col-span-4 lg:col-start-9 self-end text-[15px] leading-relaxed text-paper/70">{degree.detail}</p>
         </div>

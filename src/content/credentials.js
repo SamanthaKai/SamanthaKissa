@@ -6,11 +6,25 @@ export const education = [
     title: 'Bachelor of Information Technology',
     issuer: 'Mbarara University of Science and Technology',
     when: 'August 2023 – 2026 · Graduated 2026',
-    detail: 'Coursework across software engineering, databases, networking, systems and network security, artificial intelligence and IT management. The full list is on the About page.',
+    detail: 'A three-year degree with coursework across software engineering, databases, networking, systems and network security, artificial intelligence and IT management. The full list is on the About page.',
+  },
+]
+
+export const scholarships = [
+  {
+    title: 'Madhvani Scholarship',
+    issuer: 'Recipient',
+    when: '2025 – 2026',
   },
 ]
 
 export const certifications = [
+  {
+    title: 'Bachelor of Information Technology',
+    issuer: 'Mbarara University of Science and Technology',
+    when: '2026',
+    detail: 'Three-year degree, completed 2023 – 2026.',
+  },
   { title: 'Cyber Core Associate', issuer: 'Ubuntu Bridge Initiative', when: '2026', detail: 'Awarded on completing Operation Root Access, with a certificate issued for each stage.' },
   { title: 'AWS AI Practitioner Challenge', issuer: 'Udacity' },
   { title: 'Introduction to Kali Linux Basics', issuer: 'Simplilearn SkillUp' },

@@ -1,5 +1,5 @@
 import usePageMeta from '../hooks/usePageMeta'
-import { education, certifications, training, communities } from '../content/credentials'
+import { education, scholarships, certifications, training, communities } from '../content/credentials'
 import PageEnd from '../components/PageEnd'
 import { PageHeader, SectionHead } from '../components/ui'
 
@@ -39,18 +39,23 @@ export default function Credentials() {
           <Register items={education} />
         </section>
 
+        <section aria-labelledby="c-schol">
+          <SectionHead id="c-schol" index="ii / Scholarships" title="Scholarships" />
+          <Register items={scholarships} />
+        </section>
+
         <section aria-labelledby="c-cert">
-          <SectionHead id="c-cert" index="ii / Certifications" title="Professional certifications" />
+          <SectionHead id="c-cert" index="iii / Qualifications" title="Qualifications and certifications" />
           <Register items={certifications} numbered />
         </section>
 
         <section aria-labelledby="c-train">
-          <SectionHead id="c-train" index="iii / Training" title="Training programmes" />
+          <SectionHead id="c-train" index="iv / Training" title="Training programmes" />
           <Register items={training} />
         </section>
 
         <section aria-labelledby="c-comm">
-          <SectionHead id="c-comm" index="iv / Communities" title="Fellowships and communities" />
+          <SectionHead id="c-comm" index="v / Communities" title="Fellowships and communities" />
           <Register items={communities} />
         </section>
       </div>
