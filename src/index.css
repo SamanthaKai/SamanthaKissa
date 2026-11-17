@@ -4,75 +4,59 @@
 
 @layer base {
   html {
-    scroll-behavior: smooth;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+    -webkit-text-size-adjust: 100%;
+    text-rendering: optimizeLegibility;
   }
-
   body {
-    font-family: 'Inter', system-ui, sans-serif;
-    background-color: #F6F1EA;
-    color: #1B1714;
+    @apply bg-paper text-ink font-sans antialiased;
+    font-feature-settings: 'ss01', 'cv11';
   }
-
-  .dark body {
-    background-color: #13110F;
-    color: #EFE8DE;
-  }
-
   ::selection {
-    background: #E8CB9E;
-    color: #1B1714;
+    @apply bg-signal text-white;
   }
-
-  section[id] {
-    scroll-margin-top: 72px;
-  }
-}
-
-@layer utilities {
-  .section-reveal {
-    opacity: 0;
-    transform: translateY(12px);
-    transition: opacity 0.6s ease-out, transform 0.6s ease-out;
-  }
-
-  .section-reveal.visible {
-    opacity: 1;
-    transform: translateY(0);
-  }
-
-  /* One-time entrance for the top of each page. */
-  .hero-in {
-    animation: hero-in 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
-  }
-
-  .hero-in-late {
-    animation-delay: 0.15s;
-  }
-
-  /* Underline that draws itself in on hover. */
-  .draw-underline {
-    background-image: linear-gradient(currentColor, currentColor);
-    background-size: 0% 1px;
-    background-position: 0 100%;
-    background-repeat: no-repeat;
-    transition: background-size 0.4s cubic-bezier(0.22, 1, 0.36, 1);
-  }
-
-  .draw-underline:hover,
-  .draw-underline:focus-visible {
-    background-size: 100% 1px;
+  :focus-visible {
+    outline: 2px solid theme('colors.signal.DEFAULT');
+    outline-offset: 3px;
   }
 }
 
-@keyframes hero-in {
-  from { opacity: 0; transform: translateY(16px); }
-  to   { opacity: 1; transform: translateY(0); }
+@layer components {
+  /* Wide, heavy display face. Archivo's width axis does most of the identity work. */
+  .display {
+    font-family: theme('fontFamily.display');
+    font-variation-settings: 'wdth' 118;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 0.92;
+  }
+  .display-narrow {
+    font-family: theme('fontFamily.display');
+    font-variation-settings: 'wdth' 100;
+    font-weight: 700;
+    letter-spacing: -0.015em;
+    line-height: 1.05;
+  }
+  /* Mono metadata label, styled like a log field. */
+  .label {
+    @apply font-mono text-[11px] uppercase tracking-label text-ink-muted;
+  }
+  .frame {
+    @apply mx-auto w-full max-w-frame px-4 sm:px-8 lg:px-12;
+  }
+  .prose-body p + p {
+    margin-top: 1.1em;
+  }
 }
 
+/* Page-level fade on route change. Short, and off for reduced motion. */
+@keyframes page-in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+.page-in {
+  animation: page-in 320ms cubic-bezier(0.2, 0.7, 0.2, 1) both;
+}
 @media (prefers-reduced-motion: reduce) {
-  html { scroll-behavior: auto; }
-  .section-reveal { opacity: 1; transform: none; transition: none; }
-  .hero-in { animation: none; }
+  .page-in { animation: none; }
+  * { scroll-behavior: auto !important; }
 }

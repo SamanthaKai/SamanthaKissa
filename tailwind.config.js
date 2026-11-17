@@ -1,40 +1,32 @@
 /** @type {import('tailwindcss').Config} */
-// Palette taken from the hero photo: warm linen walls, a black blazer,
-// amber lamp light (brass) and the office plants (leaf).
+// "Case file" system: paper and ink, one signal colour, hairline rules.
 export default {
   content: ['./index.html', './src/**/*.{js,jsx}'],
-  darkMode: 'class',
   theme: {
     extend: {
       colors: {
-        brass: {
-          50: '#FBF5EC',
-          100: '#F4E6CF',
-          200: '#E8CB9E',
-          300: '#D9AA6B',
-          400: '#C98F48',
-          500: '#B07535',
-          600: '#8A5A26',
-          700: '#6F471F',
-          800: '#52351A',
-          900: '#3A2614',
+        paper: '#F3F2EE',
+        sheet: '#FAFAF8',
+        ink: {
+          DEFAULT: '#0E1013',
+          soft: '#2A2E34',
+          muted: '#5B6068',
+          faint: '#8A8F96',
         },
-        leaf: {
-          300: '#A9BE8C',
-          500: '#5E7A45',
-          700: '#33452A',
-          900: '#1C2618',
+        rule: '#D6D4CD',
+        signal: {
+          DEFAULT: '#D63A15', // markers, bars, large type
+          text: '#B3300F', // small text on paper (AA)
+          bright: '#FF6B45', // on ink backgrounds
         },
-        paper: '#F6F1EA',
-        night: '#13110F',
-        cream: '#EFE8DE',
-        charcoal: '#1B1714',
-        espresso: '#221D19',
       },
       fontFamily: {
-        heading: ['Newsreader', 'Georgia', 'serif'],
-        body: ['Inter', 'system-ui', 'sans-serif'],
+        display: ['Archivo', 'Arial Narrow', 'system-ui', 'sans-serif'],
+        sans: ['Inter', 'system-ui', 'sans-serif'],
+        mono: ['"JetBrains Mono"', 'ui-monospace', 'SFMono-Regular', 'monospace'],
       },
+      maxWidth: { frame: '84rem' },
+      letterSpacing: { label: '0.08em' },
     },
   },
   plugins: [],
