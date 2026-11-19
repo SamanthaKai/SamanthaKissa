@@ -32,8 +32,8 @@ export default function Home() {
           Kissa<span className="text-signal">.</span>
         </h1>
 
-        <div className="mt-8 sm:mt-10 grid gap-x-8 gap-y-12 lg:grid-cols-12 border-t border-ink pt-8">
-          <div className="lg:col-span-5">
+        <div className="mt-8 sm:mt-10 grid gap-x-8 gap-y-12 sm:grid-cols-12 border-t border-ink pt-8">
+          <div className="sm:col-span-7 lg:col-span-5">
             <p className="display-narrow text-[1.6rem] sm:text-[2rem] leading-[1.12]">
               IT professional focused on cybersecurity, security operations, artificial intelligence and software development.
             </p>
@@ -46,20 +46,8 @@ export default function Home() {
             </div>
           </div>
 
-          <div className="lg:col-span-4 lg:col-start-6">
-            <Label>Record</Label>
-            <FactList
-              className="mt-3"
-              items={[
-                { label: 'Based in', value: person.location },
-                { label: 'Education', value: 'BIT, Mbarara University of Science and Technology, 2026' },
-                { label: 'Focus', value: 'SOC analysis, incident response, AI-integrated software' },
-                { label: 'Status', value: 'Open to entry-level roles, internships and fellowships' },
-              ]}
-            />
-          </div>
-
-          <figure className="lg:col-span-3 max-w-xs lg:max-w-none">
+          {/* Phones: after the intro. Tablets: beside it. Desktop: the far-right column. */}
+          <figure className="w-full max-w-sm sm:max-w-none sm:col-span-5 lg:col-span-3 lg:col-start-10 lg:row-start-1">
             <div className="border border-ink bg-sheet">
               <img
                 src={person.photo.src}
@@ -72,6 +60,19 @@ export default function Home() {
             </div>
             <figcaption className="label mt-2.5">Fig. 01 · {person.name}</figcaption>
           </figure>
+
+          <div className="sm:col-span-12 lg:col-span-4 lg:col-start-6 lg:row-start-1">
+            <Label>Record</Label>
+            <FactList
+              className="mt-3"
+              items={[
+                { label: 'Based in', value: person.location },
+                { label: 'Education', value: 'BIT, Mbarara University of Science and Technology, 2026' },
+                { label: 'Focus', value: 'SOC analysis, incident response, AI-integrated software' },
+                { label: 'Status', value: 'Open to entry-level roles, internships and fellowships' },
+              ]}
+            />
+          </div>
         </div>
       </section>
 
